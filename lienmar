@@ -1,1 +1,52 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class milkteaMenu {
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String[] menuList = {"Mocha", "Redvilbeat", "Chocolate", "Vanilla", "Cookies&Cream", "Blackforest", "Rockyroad"};
+        int[] menuPrice = {100, 99, 98, 97, 99, 98, 95};
+        ArrayList<String> orders = new ArrayList<String>();
+        String order, pick;
+        int total = 0;
+        
+        do { 
+        System.out.println("Order? (yes or no): ");
+        order = in.nextLine();
+        
+         if (order.equalsIgnoreCase("yes")) {
+                 System.out.println("MENU");
+                 System.out.println("Milktea: ");
+                for (int m = 0; m < menuList.length; m++) {
+                    System.out.println(" " + menuList[m] + " - " + menuPrice[m]);
+                }
+             
+         System.out.println("Pick an order from the menu. (if done type \" done \". ");
+            pick = in.nextLine();
+        
+         
+         for (int m = 0; m < menuList.length; m++) {
+         
+             if (pick.equalsIgnoreCase(menuList[m])) {
+                 pick = menuList[m];
+                 orders.add(pick);
+                 total += menuPrice[m];
+                 }
+             }
+        
+                 } else if (order.equalsIgnoreCase("no")){
+                      if (orders.size() == 0) {
+                     System.out.println("No Order Response!");
+                          } else {
+                              System.out.println("Here's your order");
+                              for (int i = 0; i <orders.size(); i++) {
+                              System.out.println(orders.get(i));
+                              }
+                              System.out.println("The total is " + total);
+                          }
+                 } 
+        }while (order.equalsIgnoreCase("yes"));
+        
+    }
+}
