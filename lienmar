@@ -1,0 +1,95 @@
+/**
+* Name: LIENMAR BACUS
+* Section: IT Dept
+* Year: 4th Year
+*/
+
+
+
+import java.util.Scanner;
+
+public class helloWorld {
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+
+		int menu = 1;
+		int sago = 0;
+		int con = 1;
+		int  price = 0;
+		int total = 0;
+
+		do {
+			System.out.println(" Mini Milktea menu: ");
+			System.out.println("1. Vanilla 99.00 ");
+			System.out.println("2. Mocha 101.00");
+			System.out.println("3.Chocolate 100.00");
+
+			System.out.println("Choose your flavor: ");
+			menu = in.nextInt();
+			System.out.println(" ");
+
+			System.out.println(" add sago: ");
+			System.out.println("1.1 cup 10.00");
+			System.out.println("2. 2 cup 15.00");
+			System.out.println("3. 3 cup  20.00");
+			System.out.print(" Best sago: ");
+			sago = in.nextInt();
+			System.out.println(" ");
+
+            
+            if(menu == 1){
+                price = 99;
+				total = price + total;
+				System.out.println("You ordered: Vanilla" + " - " + price);
+            }
+            else if(menu == 2){
+                price = 101;
+				total = price + total;
+				System.out.println("You ordered: Mocha" + " - " + price);
+            }
+            else if( menu == 3){
+                price = 100;
+				total = price + total;
+				System.out.println("You ordered: Chocolate" + " - " + price);
+            }
+            else{
+                System.out.println(" Invalid doesnt match in Menu");
+            }
+
+
+
+			if (sago==1) {
+				price = 10;
+				total = price + total;
+				System.out.println("You add: 1 cup " + " - " + price);
+			}
+				else if(sago==2) {
+				price = 15;
+				total = price + total;
+				System.out.println("You add: 2 cup" + " - " + price); 
+				}
+				else if(sago==3) {
+				price = 15;
+				total = price + total;
+				System.out.println("You add: 3 cup" + " - " + price); 
+				}
+				else{
+				System.out.println(" NO STOCK");
+			}
+
+			System.out.println("Total Price: " + total);
+			System.out.println(" ");
+
+			System.out.println(" Do you want order again? 1.Yes: ");
+
+			System.out.println("Do you want to order again? 2. No: ");
+			con = in.nextInt();
+
+			System.out.println("THANK YOU");
+
+
+
+		} while (con == 1);
+		}
+    }
